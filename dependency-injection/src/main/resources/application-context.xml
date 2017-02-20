@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="defualtmessage" class="io.spring.learn.dependencyInjection.DefualtMessage">
+
+	</bean>
+	<bean id="messageconstructor" class="io.spring.learn.dependencyInjection.ConstructorMessage">
+		<constructor-arg value="this a constructor injection" />
+	</bean>
+
+	<bean id="messagesetter" class="io.spring.learn.dependencyInjection.SetterMessage">
+		<property name="message" value="this a setter injection" />
+	</bean>
+
+	<bean id="message" class="io.spring.learn.bean.Message">
+		<property name="message" value="spring is really fun" />
+	</bean>
+
+	<bean id="springMessage" class="java.lang.String">
+		<constructor-arg value="Spring is fun." />
+	</bean>
+	<bean id="referancemessage" class="io.spring.learn.dependencyInjection.ConstructorMessage">
+		<constructor-arg ref="springMessage" />
+	</bean>
+</beans>
